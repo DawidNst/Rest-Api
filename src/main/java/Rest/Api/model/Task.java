@@ -1,19 +1,22 @@
 package Rest.Api.model;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="tasks")
 public class Task {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotBlank(message ="Tasks not be null")
     private String description;
     private boolean done;
+
+   public Task() {
+    }
 
     public int getId() {
         return id;
