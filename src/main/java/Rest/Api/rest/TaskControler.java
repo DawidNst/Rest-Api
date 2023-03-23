@@ -10,18 +10,20 @@ import org.springframework.data.rest.webmvc.support.RepositoryEntityLinks;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.config.Task;
 
+import java.util.List;
+
 @RepositoryRestController
 class TaskControler {
 
     private static final Logger logger= LoggerFactory.getLogger(TaskControler.class);
-    private final TaskRepository repository;
+    protected  final TaskRepository repositry;
 
     TaskControler(final TaskRepository repositry){
         this.repository = repositry;
     }
 
-    ResponseEntity<?> readAllTasks(){
+    List<Task> readAllTasks(){
     logger.warn("all the task");
-    return ResponseEntity.ok(repository.);
+    return repositry.;
     }
 }
