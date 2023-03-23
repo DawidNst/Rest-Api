@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@Table(name="tasks")
+@Table(name="/tasks")
 public class Task {
 
     @Id

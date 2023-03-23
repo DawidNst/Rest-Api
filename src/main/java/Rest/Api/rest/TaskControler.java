@@ -1,27 +1,27 @@
 package Rest.Api.rest;
 
+import Rest.Api.model.TaskRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.core.task.TaskRejectedException;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
-import org.springframework.data.rest.webmvc.support.RepositoryEntityLinks;
-import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.config.Task;
+
+import java.util.List;
+
 
 @RepositoryRestController
 class TaskControler {
 
     private static final Logger logger= LoggerFactory.getLogger(TaskControler.class);
-    private final TaskRepository repository;
+    protected  final TaskRepository repository;
 
     TaskControler(final TaskRepository repositry){
         this.repository = repositry;
     }
 
-    ResponseEntity<?> readAllTasks(){
-    logger.warn("all the task");
-    return ResponseEntity.ok(repository.);
+    List<Task> readAllTasks(){
+        logger.warn("all the task");
+        return repository.findAll();
     }
 }
+

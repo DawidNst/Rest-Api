@@ -10,7 +10,8 @@ import org.springframework.scheduling.config.Task;
 
 import java.util.List;
 
-@RepositoryRestResource(path = "tasks")
+@RepositoryRestResource(path = "/tasks")
+
 public interface TaskRepository extends JpaRepository<Task, Integer> {
 
     @Override
