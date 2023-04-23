@@ -1,5 +1,5 @@
 package Rest.Api.rest;
-
+import Rest.Api.model.TaskRepository;
 import Rest.Api.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +9,7 @@ import org.springframework.scheduling.config.Task;
 import java.util.List;
 
 @RepositoryRestController
-class TaskControler {
+final class TaskControler {
 
     private static final Logger logger= LoggerFactory.getLogger(TaskControler.class);
     protected  final TaskRepository repository;

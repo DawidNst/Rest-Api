@@ -12,7 +12,7 @@ import java.util.List;
 
 @RepositoryRestResource(path = "/tasks")
 
-public interface TaskRepository extends JpaRepository<Task, Integer> {
+ public interface TaskRepository extends JpaRepository<Task, Integer> {
 
     @Override
     @RestResource(exported = false)
